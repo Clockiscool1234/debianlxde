@@ -12,7 +12,7 @@ RUN mkdir /root/.vnc && \
     echo startlxde > /root/.vnc/xstartup && \
     chmod +x /root/.vnc/xstartup
 
-RUN vncserver :1 -SecurityTypes None,TLSNone && \
-    websockify -D --web=/usr/share/novnc/ 8080 localhost:5901
+EXPOSE 10000
 
-EXPOSE 8080
+RUN vncserver :1 -SecurityTypes None,TLSNone && \
+    websockify -D --web=/usr/share/novnc/ 10000 localhost:5901
