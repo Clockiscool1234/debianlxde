@@ -10,7 +10,7 @@ RUN apt-get update && \
 
 RUN mkdir /root/.vnc && \
     echo startlxde > /root/.vnc/xstartup && \
-    chmod +x /root/.vnc/xstartup && \
+    chmod +x /root/.vnc/xstartup
 
 RUN vncserver :1 -SecurityTypes None,TLSNone && \
     websockify -D --web=/usr/share/novnc/ 8080 localhost:5901
