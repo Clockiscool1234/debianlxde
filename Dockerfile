@@ -12,6 +12,6 @@ RUN mkdir /root/.vnc && \
     export USER=root
 
 RUN vncserver :1 -SecurityTypes None,TLSNone && \
-    websockify -D --web=/usr/share/novnc/ --cert=/home/debian/novnc.pem 80 localhost:5901
+    websockify -D --web=/usr/share/novnc/ 80 localhost:5901
 
 EXPOSE 80
