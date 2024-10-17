@@ -7,7 +7,7 @@ RUN apt-get update && \
     nano wget python3-websockify novnc -y
 
 RUN mkdir /root/.vnc && \
-    echo startlxde > /root/.vnc/xstartup
+    echo startlxde > /root/.vnc/xstartup && \
     export USER=root
 
 RUN vncserver :1 -SecurityTypes None,TLSNone && \
