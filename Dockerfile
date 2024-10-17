@@ -8,6 +8,7 @@ RUN apt-get update && \
 
 RUN mkdir /root/.vnc && \
     echo startlxde > /root/.vnc/xstartup && \
+    chmod +x /root/.vnc/xstartup && \
     export USER=root
 
 RUN vncserver :1 -SecurityTypes None,TLSNone && \
