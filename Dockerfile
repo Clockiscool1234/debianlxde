@@ -11,7 +11,7 @@ RUN mkdir /root/.vnc && \
     chmod +x /root/.vnc/xstartup && \
     export USER=root
 
-RUN vncserver :1 -SecurityTypes None,TLSNone && \
-    websockify -D --web=/usr/share/novnc/ 80 localhost:5901
+EXPOSE 8080
 
-EXPOSE 80
+RUN vncserver :1 -SecurityTypes None,TLSNone && \
+    websockify -D --web=/usr/share/novnc/ 8080 localhost:5901
